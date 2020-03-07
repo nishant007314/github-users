@@ -1,0 +1,10 @@
+<ul class="list-unstyled">
+  <li class="media" *ngFor="let follower of followers">
+    <img class="mr-3 profile-img" [src]="follower.avatar_url" alt="{{ follower.login }}'s profile pic">
+    <div class="media-body card-content">
+      <h5 class="mt-0 mb-1">{{ follower.login }}</h5>
+      <a [routerLink]="['/profile',follower.login]">
+        go to profile</a>
+    </div>
+  </li>
+</ul>

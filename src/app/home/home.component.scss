@@ -1,0 +1,30 @@
+colors{
+    color: #fbe8a6;
+    color: #f4976c;
+    color: #c2814d;
+}
+
+.button-container{
+    width: 40%;
+    margin: auto;
+    margin-top: 10%;
+    padding: 10px;
+    border: 1px solid #f4976c;
+    box-shadow: 5px 5px 1px 1px #f4976c;
+    border-radius: 15px;
+}
+
+.btn-lg{
+    margin: 10px auto;
+}
+
+.button-light{
+    background-color:#fbe8a6;
+    color:  #f4976c;
+    border: #f4976c 1px solid;
+}
+
+.button-dark{
+    background-color: #f4976c;
+    color: #fbe8a6;
+}

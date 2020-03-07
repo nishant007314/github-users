@@ -1,0 +1,47 @@
+<div class="card">
+    <span class="card-header">Personal Details:</span>
+    <span class="card-body">{{user.name}} <p *ngIf="user.site_admin">#</p></span>
+    <span class="card-body">{{user.company}}</span>
+    <span class="card-body">{{user.location}}</span>
+</div>
+<div class="card">
+    <span class="card-header">Social Details:</span>
+    <div class="card-body">
+        <span *ngIf="user.followers">Followers: {{user.followers}}</span>
+        <span *ngIf="user.followers">
+            <a [routerLink]="['/users',user.login,'followers']" [queryParams]="{ page:1, order:'newest' }">
+                followers</a>
+        </span>
+    </div>
+    <div class="card-body">
+        <span *ngIf="user.following">Following: {{user.following}}</span>
+        <span *ngIf="user.following">
+            <a [routerLink]="['/following',user.login]">
+                following</a>
+        </span>
+    </div>
+</div>
+<div class="card">
+    <span class="card-header">Repos:</span>
+    <div class="card-body">
+        <span *ngIf="user.public_repos">Total: {{user.public_repos}}</span>
+        <span *ngIf="user.public_repos">
+            <a routerLink="user.repos_url">
+                go to repos</a>
+        </span>
+    </div>
+</div>
+<div class="card">
+    <span class="card-header">Others:</span>
+    <div class="card-body">
+        <span *ngIf="user.subscriptions_url">
+            <a [href]="user.subscriptions_url">
+                subscriptions</a>
+        </span>
+        <br>
+        <span *ngIf="user.html_url">
+            <a [href]="user.html_url">
+                github account</a>
+        </span>
+    </div>
+</div>

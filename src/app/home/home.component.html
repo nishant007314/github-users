@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="home-logo">
+    <div>G</div>
+  </div>
+  <button class="btn btn-lg" [ngClass]="{
+    'button-dark': !hover,
+    'button-light': hover
+  }" (mouseover)="hover=!hover" (mouseout)="hover=false" [routerLink]="['/login']">Log in</button>
+  <button class="btn btn-lg" [ngClass]="{
+    'button-light': !hover,
+    'button-dark': hover
+  }" (mouseover)="hover=!hover" (mouseout)="hover=true" [routerLink]="['/signup']">Sign up</button>
+</div>
