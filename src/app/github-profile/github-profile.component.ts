@@ -39,21 +39,21 @@ export class GithubProfileComponent implements OnInit {
     //     response => this.user = response
     //   );
     this.user = {
-      "login": "octacat",
-      "avatar_url": "https://github.githubassets.com/images/modules/logos_page/Octocat.png",
-      "html_url": "https://github.com/octacat",
-      "followers_url": "https://api.github.com/users/octacat/followers",
-      "following_url": "https://api.github.com/users/octacat/following{/other_user}",
-      "subscriptions_url": "https://api.github.com/users/octacat/subscriptions",
-      "repos_url": "https://api.github.com/users/octacat/repos",
-      "site_admin": false,
-      "name": "octacat",
-      "company": "Github World",
-      "location": "San Bernadino, CA",
-      "public_repos": 5,
-      "followers": 7,
-      "following": 6,
-    }
+      login: 'octacat',
+      avatar_url: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png',
+      html_url: 'https://github.com/octacat',
+      followers_url: 'https://api.github.com/users/octacat/followers',
+      following_url: 'https://api.github.com/users/octacat/following{/other_user}',
+      subscriptions_url: 'https://api.github.com/users/octacat/subscriptions',
+      repos_url: 'https://api.github.com/users/octacat/repos',
+      site_admin: false,
+      name: 'octacat',
+      company: 'Github World',
+      location: 'San Bernadino, CA',
+      public_repos: 5,
+      followers: 7,
+      following: 6,
+    };
   }
 
   updateProfile() {

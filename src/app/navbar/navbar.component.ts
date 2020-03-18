@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'navbar',
@@ -10,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   isActive: boolean;
   currentUser: any;
+  env: string;
+
   userSession = {
     login: 'octocat',
     avatar_url: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
@@ -17,6 +20,7 @@ export class NavbarComponent implements OnInit {
   constructor(private service: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.env = environment.envName;
     this.setCurrentUser();
   }
 

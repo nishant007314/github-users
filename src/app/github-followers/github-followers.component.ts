@@ -25,13 +25,13 @@ export class GithubFollowersComponent implements OnInit {
     ]).pipe(
       switchMap(
         combined => {
-          let username = combined[0].get('username');
-          let page = combined[1].get('page');
-          let order = combined[1].get('order');
-          let params = {
-            page: page,
-            order: order
-          }
+          const username = combined[0].get('username');
+          const page = combined[1].get('page');
+          const order = combined[1].get('order');
+          const params = {
+            page,
+            order
+          };
           return this.service.getFollowersForUser(username, params);
         }
       )

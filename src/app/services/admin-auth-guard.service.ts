@@ -13,11 +13,11 @@ export class AdminAuthGuard implements CanActivate {
   ) { }
 
   canActivate() {
-    let user = this.authService.getCurrentUser();
+    const user = this.authService.getCurrentUser();
     if (user && user.admin) {
       return true;
     } else {
-      this.router.navigate(['no-access'])
+      this.router.navigate(['no-access']);
       return false;
     }
   }

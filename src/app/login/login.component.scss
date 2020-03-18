@@ -1,8 +1,15 @@
-.form-control{
-    margin: 10px auto;
-    width: 100%;
+.form-control {
+  margin: 10px auto;
+  width: 100%;
+  background-color: #fbe8a6;
+  border: 1px solid #f4976c;
 }
 
-.btn-m{
-    margin: 10px auto;
+.btn-lg {
+  margin: auto
+}
+
+::placeholder {
+  color: #c2814d;
+  opacity: 0.5;
 }
