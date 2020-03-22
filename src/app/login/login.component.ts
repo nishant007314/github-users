@@ -10,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  hover: boolean = false;
+  hover: boolean;
   invalidLogin: boolean;
 
   ngOnInit() {
@@ -18,9 +18,11 @@ export class LoginComponent implements OnInit {
   }
 
   private initForm() {
+    this.hover = false;
     this.loginForm = new FormGroup({
       username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      password: new FormControl('', Validators.required),
+      remember: new FormControl(false)
     });
   }
 
@@ -30,13 +32,13 @@ export class LoginComponent implements OnInit {
     private authService: AuthService) { }
 
   login() {
-    let credentials = this.loginForm.value;
+    const credentials = this.loginForm.value;
     this.authService.login(credentials)
       .subscribe(
         result => {
           if (result) {
-            let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
-            let username = credentials.username;
+            const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+            const username = credentials.username;
             if (returnUrl) {
               this.router.navigateByUrl(returnUrl);
             } else {
@@ -46,7 +48,7 @@ export class LoginComponent implements OnInit {
             this.invalidLogin = true;
           }
         }
-      )
+      );
   }
 
   get username() {

@@ -1,25 +1,32 @@
 <div class="container">
-  <div class="home-logo">
-  </div>
+  <span class="heading-3">Log in to ProjectFolio</span>
   <form [formGroup]="loginForm" (submit)="login()">
     <div class="alert alert-danger" *ngIf="invalidLogin">Invalid username and/or password.</div>
+    <label for="username">Username</label>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Username" formControlName="username">
+      <input type="text" id="username" class="form-control" placeholder="Username" formControlName="username">
       <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
         <span *ngIf="username.errors.required">Username is required</span>
       </div>
     </div>
     <div class="form-group">
-      <input type="password" name="password" class="form-control" placeholder="Password" formControlName="password">
+      <label for="password">Password</label>
+      <a class="pointer">forgot password?</a>
+      <input type="password" id="password" name="password" class="form-control" placeholder="Password" formControlName="password">
       <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
         <span *ngIf="password.errors.required">Password is required</span>
       </div>
     </div>
-    <button class="btn btn-lg" [ngClass]="{
-            'button-dark': !hover,
-            'button-light': hover
-          }" (mouseover)="hover=!hover" (mouseout)="hover=false" type="submit" [disabled]="loginForm.invalid">Log in
+    <div class="form-group">
+      <label>
+        <input class="pointer" type="checkbox" name="remember" formControlName="remember">
+        <span>remember</span>
+      </label>
+    </div>
+    <button class="btn btn-md btn-primary" type="submit" [disabled]="loginForm.invalid">Log in
     </button>
-
+    <span class="help-text">Don't have an account?
+      <a class="pointer" [routerLink]="['/signup']">create one</a>
+    </span>
   </form>
 </div>

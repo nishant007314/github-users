@@ -55,7 +55,7 @@ import { AdminAuthGuard } from './services/admin-auth-guard.service';
       },
       {
         path: 'signup',
-        component: SignupComponent
+        component: HomeComponent
       },
       {
         path: 'users/:username/followers',
