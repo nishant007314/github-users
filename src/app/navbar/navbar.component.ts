@@ -9,9 +9,9 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  isActive: boolean;
   currentUser: any;
   env: string;
+  showEnv: boolean;
 
   userSession = {
     login: 'octocat',
@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
   constructor(private service: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.showEnv = true;
     this.env = environment.envName;
     this.setCurrentUser();
   }

@@ -1,61 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~bootstrap/dist/css/bootstrap.css";
-body {
-  padding: 10px;
-  background-color: #fbe8a6;
+////////////////// background and logo //////////////////////
+.home-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url('src/assets/icons/home-bg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .home-logo {
-  height: 50px;
-  width: 50px;
-  margin: 30px auto;
-  content: url('src/assets/icons/logo.png');
-  filter: invert(58%) sepia(7%) saturate(3678%) hue-rotate(345deg) brightness(94%) contrast(78%);
-  transform: rotate(-45deg);
+  width: 3%;
+  content: url('src/assets/icons/pf-logo.png');
 }
 
-.container {
-  width: 40%;
-  margin: auto;
-  margin-top: 10%;
-  padding: 10px;
-  border: 1px solid #f4976c;
-  box-shadow: 5px 5px 1px 1px #f4976c;
-  border-radius: 15px;
+.home-logo:focus {
+  outline: none;
 }
 
 .pointer {
   cursor: pointer;
 }
 
+////////////////// form //////////////////////
+.container {
+  width: 32%;
+  position: absolute;
+  top: 15%;
+  padding: 2%;
+  border: 1px solid #cacaca;
+  box-shadow: 3px 3px 10px #ececec;
+  border-radius: 10px;
+}
+
 .form-control.ng-touched.ng-invalid {
   border: 1px solid rgb(255, 102, 0);
 }
 
+.fixed-bottom {
+  margin: 0px;
+  padding: 0px;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+}
+
+label {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  margin-bottom: 0rem;
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+////////////////// buttons //////////////////////
 .btn {
   width: 100%;
-  margin: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto;
 }
 
-.btn:hover {
-  color: #fbe8a6;
+.btn:focus {
+  box-shadow: none;
 }
 
-.button-light {
-  background-color: #fbe8a6;
-  color: #f4976c !important;
-  border: #f4976c 1px solid;
+.btn-primary {
+  color: #ffffff;
+  background-color: #4689C6;
+  border: 1px solid #4689C6;
+  font-family: "Open Sans", sans-serif;
 }
 
-.button-dark {
-  background-color: #f4976c;
-  color: #fbe8a6;
+.btn-primary:hover {
+  color: #4689C6;
+  background-color: #ffffff;
+  border: 1px solid #4689C6;
+  font-family: "Open Sans", sans-serif;
 }
 
-.button-container {
-  border: 1px solid #f4976c;
-  box-shadow: 1px 1px 2px #f4976c;
-  border-radius: 15px;
+.btn-outline-secondary:focus,
+.btn-outline-secondary.focus {
+  box-shadow: none;
+}
+
+////////////////// text //////////////////////
+.help-text {
+  font-family: "Open Sans", sans-serif;
+  color: #656565;
+  font-size: small;
+  line-height: normal;
+  display: inline-block;
+}
+
+.heading-3 {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  display: inline-block;
+  font-size: x-large;
+  font-family: "Open Sans", sans-serif;
+  color: #656565;
 }

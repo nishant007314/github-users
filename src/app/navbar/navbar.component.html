@@ -1,35 +1,46 @@
 <!-- Environment help text -->
-<div class="alert alert-success">
+<!-- <div class="fixed-bottom alert alert-success" *ngIf="showEnv">
   <span *ngIf="env==='dev'">You are in dev environment</span>
   <span *ngIf="env==='test'">You are in test environment</span>
   <span *ngIf="env==='prod'">You are in production environment</span>
-</div>
+  <span class="pointer float-right" (click)="showEnv=!showEnv">&times;</span>
+</div> -->
 <!-- new nav bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="home-logo d-inline-block pointer" [routerLink]="['/']">
+  <div class="home-logo d-inline-block pointer py-2" [routerLink]="['/']">
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div *ngIf="isLoggedIn()" class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item pointer" routerLinkActive="active current">
-        <a class="nav-link" [routerLink]="['/users',userSession.login,'followers']" [queryParams]="{ page:1, order:'newest' }">Followers</a>
+        <a class="nav-link" [routerLink]="[]">
+          <span class="about-us nav-icon align-text-bottom"></span>About us</a>
       </li>
       <li class="nav-item pointer" routerLinkActive="active current">
+        <a class="nav-link" [routerLink]="[]">
+          <span class="explore nav-icon align-text-bottom"></span>Explore</a>
+      </li>
+      <li *ngIf="isLoggedIn()" class="nav-item pointer" routerLinkActive="active current">
+        <a class="nav-link" [routerLink]="['/users',userSession.login,'followers']" [queryParams]="{ page:1, order:'newest' }">Followers</a>
+      </li>
+      <li *ngIf="isLoggedIn()" class="nav-item pointer" routerLinkActive="active current">
         <a class="nav-link" routerLink="/repos">Repos</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
     <span *ngIf="currentUser">
       Hi {{ currentUser.name }}
     </span>
-    <button class="btn btn-outline-secondary btn-sm" (click)="logoutUser()">
+    <button *ngIf="!isLoggedIn()" class="btn btn-outline-secondary btn-sm ml-auto" [routerLink]="'/signup'">
+      Sign up
+    </button>
+    <button *ngIf="!isLoggedIn()" class="btn btn-outline-secondary btn-sm" [routerLink]="'/login'">
+      Log in
+    </button>
+    <button *ngIf="isLoggedIn()" class="btn btn-outline-secondary btn-sm" (click)="logoutUser()">
       Log out
     </button>
   </div>

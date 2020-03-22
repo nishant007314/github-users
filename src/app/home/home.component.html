@@ -1,12 +1,7 @@
-<div class="container">
-  <div class="home-logo">
-  </div>
-  <button class="btn btn-lg" [ngClass]="{
-    'button-dark': !hover,
-    'button-light': hover
-  }" (mouseover)="hover=!hover" (mouseout)="hover=false" [routerLink]="['/login']">Log in</button>
-  <button class="btn btn-lg" [ngClass]="{
-    'button-light': !hover,
-    'button-dark': hover
-  }" (mouseover)="hover=!hover" (mouseout)="hover=true" [routerLink]="['/signup']">Sign up</button>
+<div class="display-box">
+  <span class="display-1">Your ProjectFolio</span>
+  <br>
+  <span class="display-2 text-width">Project Folio is a common place for all developers to save and display their projects.</span>
+  <span class="display-2">you can not just save your projects in a safe repo but can display your work using our presentation tools as well…</span>
 </div>
+<app-signup></app-signup>
