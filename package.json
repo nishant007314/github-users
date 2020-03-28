@@ -8,8 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --prod",
-    "heroku-postbuild": "ng build --prod",
+    "postinstall": "ng build --aot --prod",
     "deploy:ghp": "ng build --prod --base-href='https://nishant007314.github.io/github-users/' && ng deploy --base-href='https: //nishant007314.github.io/github-users/'",
     "deploy:firebase": "ng build --prod && firebase deploy"
   },
